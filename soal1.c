@@ -31,36 +31,63 @@ int main(){
 
     int x=-1, y=-1, z=-1;
     int sementara = -1;
+    int id_sementara = 1001; 
+
     for (int i =0;i<n;i++){
         if (strcmp(listpetugas[i].shift,"PAGI")==0){
             if (listpetugas[i].skor>sementara){
                 x = i;
                 sementara = listpetugas[i].skor;
+                id_sementara = listpetugas[i].id;
+            }
+            else if (listpetugas[i].skor==sementara){
+                if (listpetugas[i].id<id_sementara){
+                    x = i;
+                    sementara = listpetugas[i].skor;
+                    id_sementara = listpetugas[i].id;
+                }
             }
         }
     }
 
     sementara = -1;
+    id_sementara = 1001;
+
     for (int i =0;i<n;i++){
         if (strcmp(listpetugas[i].shift,"SIANG")==0){
             if (listpetugas[i].skor>sementara){
                 y = i;
                 sementara = listpetugas[i].skor;
+                id_sementara = listpetugas[i].id;
+            }
+            else if (listpetugas[i].skor==sementara){
+                if (listpetugas[i].id<id_sementara){
+                    y = i;
+                    sementara = listpetugas[i].skor;
+                    id_sementara = listpetugas[i].id;
+                }
             }
         }
     }
 
     sementara = -1;
+    id_sementara = 1001;
     for (int i =0;i<n;i++){
         if (strcmp(listpetugas[i].shift,"MALAM")==0){
             if (listpetugas[i].skor>sementara){
                 z = i;
                 sementara = listpetugas[i].skor;
+                id_sementara = listpetugas[i].id;
+            }
+            else if (listpetugas[i].skor==sementara){
+                if (listpetugas[i].id<id_sementara){
+                    z = i;
+                    sementara = listpetugas[i].skor;
+                    id_sementara = listpetugas[i].id;
+                }
             }
         }
     }
-
-
 
     if (x!=-1){
         printf("PAGI %s %d %d\n",listpetugas[x].nama, listpetugas[x].id, listpetugas[x].skor);
