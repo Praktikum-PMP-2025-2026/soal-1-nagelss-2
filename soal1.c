@@ -46,6 +46,13 @@ int main(){
                     sementara = listpetugas[i].skor;
                     id_sementara = listpetugas[i].id;
                 }
+                else if (listpetugas[i].id==id_sementara){
+                    if (x!=-1 && strcmp(listpetugas[i].nama, listpetugas[x].nama)<0){
+                        x = i;
+                        sementara = listpetugas[i].skor;
+                        id_sementara = listpetugas[i].id;        
+                    }
+                }
             }
         }
     }
@@ -66,6 +73,13 @@ int main(){
                     sementara = listpetugas[i].skor;
                     id_sementara = listpetugas[i].id;
                 }
+                else if (listpetugas[i].id==id_sementara){
+                    if (y!=-1 && strcmp(listpetugas[i].nama, listpetugas[y].nama)<0){
+                        y = i;
+                        sementara = listpetugas[i].skor;
+                        id_sementara = listpetugas[i].id;        
+                    }
+                }
             }
         }
     }
@@ -84,6 +98,13 @@ int main(){
                     z = i;
                     sementara = listpetugas[i].skor;
                     id_sementara = listpetugas[i].id;
+                }
+                else if (listpetugas[i].id==id_sementara){
+                    if (z!=-1 && strcmp(listpetugas[i].nama, listpetugas[z].nama)<0){
+                        z = i;
+                        sementara = listpetugas[i].skor;
+                        id_sementara = listpetugas[i].id;        
+                    }
                 }
             }
         }
